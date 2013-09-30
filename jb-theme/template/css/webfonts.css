@@ -1,0 +1,12 @@
+@CHARSET "UTF-8";
+
+@font-face {
+   font-style: normal;
+   font-weight: normal;
+   font-family: 'PressStart2PRegular';
+   src: url('../fonts/pressstart2p-regular-webfont.eot');
+   src: url('../fonts/pressstart2p-regular-webfont.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/pressstart2p-regular-webfont.woff') format('woff'),
+        url('../fonts/pressstart2p-regular-webfont.ttf') format('truetype'),
+        url('../fonts/pressstart2p-regular-webfont.svg#PressStart2PRegular') format('svg');
+}
