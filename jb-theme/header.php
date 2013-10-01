@@ -11,7 +11,8 @@
 		$site_url =      get_site_url();
         $template_url =  get_bloginfo('template_url');
 	    $title =         ( is_home() || is_page() ) ? 'Jesse Browne' : $post->post_title . ' | Jesse Browne';
-	    $description =   'Jesse Browne | Web Application Developer'; 
+	    $description =   'Jesse Browne | Web Application Developer';
+	    $category =      ( !is_home() ) ? get_product_category() : '';
 		?>
 
         <title><?php echo $title; ?></title>
@@ -39,9 +40,11 @@
                     <nav class="nav" id="logo">
                         <a href="<?php echo $site_url; ?>">jb</a>
                     </nav>
-                    <nav class="header-nav-bar">     
-	                    <div class="nav"><a href="<?php echo $site_url; ?>/projects/">Projects</a></div>
-	                    <div class="nav"><a href="<?php echo $site_url; ?>/articles/">Articles</a></div>
+                    <nav class="header-nav-bar">
+                        <ul>
+                            <li <?php if ($category == 'Projects') { echo 'id="active"'; } ?>><a href="<?php echo $site_url; ?>/projects/">Projects</a></li>
+                            <li <?php if ($category == 'Articles') { echo 'id="active"'; } ?>><a href="<?php echo $site_url; ?>/articles/">Articles</a></li>
+                        </ul>
                     </nav>
                 </div>
             </header>

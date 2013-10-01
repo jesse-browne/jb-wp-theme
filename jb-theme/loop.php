@@ -10,7 +10,7 @@ if (is_home()) {
     	            <!-- Main Heading -->
                     <h1>Experiments in browser games, projects and web development snippets</h1>
                     <!-- Tag Line -->
-                    <h5>By web application developer, Jesse Browne</h5>
+                    <h5>By Jesse Browne, web application developer</h5>
                     <!-- Container with Site Description and article excerpts -->
                     <div id="big-container">
                         <div class="big-container-body">
