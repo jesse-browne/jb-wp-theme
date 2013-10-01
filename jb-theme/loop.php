@@ -11,7 +11,7 @@ if (is_home()) {
                     <h1>Code snippets, browser games and projects</h1>
                     <!-- Tag Line -->
                     <h5>By Jesse Browne, web application developer</h5>
-                    <!-- Container with Site Description and article excerpts -->
+                    <!-- Container with description and most recent activity -->
                     <div id="big-container">
                         <div class="big-container-body">
                             Aside from working on <a href="http://www.greenpag.es/">greenpag.es</a>, 
