@@ -10,8 +10,8 @@
 		global $post;
 		$site_url =      get_site_url();
         $template_url =  get_bloginfo('template_url');
-	    $title = ( is_home() || is_page() ) ? 'Jesse Browne' : $post->post_title . ' | Jesse Browne';
-	    $description = 'Jesse Browne | Web Application Developer'; 
+	    $title =         ( is_home() || is_page() ) ? 'Jesse Browne' : $post->post_title . ' | Jesse Browne';
+	    $description =   'Jesse Browne | Web Application Developer'; 
 		?>
 
         <title><?php echo $title; ?></title>
@@ -40,8 +40,8 @@
                         <a href="<?php echo $site_url; ?>">jb</a>
                     </nav>
                     <nav class="header-nav-bar">     
-	                    <div class="nav"><a href="<?php echo $site_url; ?>/projects/projects-list.html">Projects</a></div>
-	                    <div class="nav"><a href="<?php echo $site_url; ?>/articles/articles-feed.html">Articles</a></div>
+	                    <div class="nav"><a href="<?php echo $site_url; ?>/projects/">Projects</a></div>
+	                    <div class="nav"><a href="<?php echo $site_url; ?>/articles/">Articles</a></div>
                     </nav>
                 </div>
             </header>
