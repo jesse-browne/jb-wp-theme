@@ -239,10 +239,6 @@ header {
     display: inline;
 }	
 
-nav ul, nav ul li {
-	display: inline;
-}
-
 nav ul li, nav ul li a {
     margin-right: 0.3em;
     color: #F3F1F1;
@@ -269,7 +265,7 @@ nav ul li, nav ul li a {
 }
 
 /** Display all header elements inline **/
-#logo, .header-nav-bar, .nav, .nav a, 
+#logo, .header-nav-bar, header nav, nav a, nav ul, nav ul li,
 .social-media, .social-media img, .search-box, .search-box input {
     display: inline;
 }

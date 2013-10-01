@@ -37,7 +37,7 @@
             <header>
                 <!-- Nest all visibile content in 'pos' divs, to control pretty positioning with min-width and side margins -->
                 <div class="pos">
-                    <nav class="nav" id="logo">
+                    <nav id="logo">
                         <a href="<?php echo $site_url; ?>">jb</a>
                     </nav>
                     <nav class="header-nav-bar">
