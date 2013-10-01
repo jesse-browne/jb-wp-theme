@@ -4,11 +4,13 @@ $site_url =      get_site_url();
 $template_url =  get_bloginfo('template_url');
 
 /* Render home page */
-if (is_home()) { ?>
+if (is_home()) { 
+    $args = array('posts_per_page' => 4);
+    $posts = get_posts($args); ?>
     	            <!-- Main Heading -->
-                    <h1>Snippets of web development and experiments in html5 and js games</h1>
+                    <h1>Experiments in games for the browser and web development snippets</h1>
                     <!-- Tag Line -->
-                    <h5>The playground of web application developer, Jesse Browne</h5>
+                    <h5>By web application developer, Jesse Browne</h5>
                     <!-- Container with Site Description and article excerpts -->
                     <div id="big-container">
                         <div class="big-container-body">
@@ -18,55 +20,24 @@ if (is_home()) { ?>
                             ever intended, learning to illustrate and happily 
                             experimenting with different Python frameworks. 
                         </div>
-                        <div class="big-container-body">
+                        <div class="big-container-body"> <?php 
+                        foreach ($posts as $post) {
+                            global $post;
+                            setup_postdata($post);
+                            $link = get_permalink($post->ID); ?>
                             <div class="small-container">
                                 <div class="small-container-title">
-                                    <a href="<?php echo $site_url; ?>/projects/projects-list.html">
-                                        <span>HTML/JS Game</span>
+                                    <a href="<?php echo $link; ?>">
+                                        <span><?php echo $post->post_title; ?></span>
                                     </a>   
                                 </div>
                                 <div class="small-container-body">
                                     <div class="small-container-image">
-                                        <img src="<?php echo $template_url;?>/images/jewel-thief.png" alt="Use games to get more cool stuff" />
+                                        <?php get_index_post_image($post); ?>
                                     </div>                  
                                 </div> 
-                            </div>
-                            <div class="small-container">
-                                <div class="small-container-title">
-                                    <a href="<?php echo $site_url; ?>/articles/change-the-world.html">
-                                        <span>World Changing</span>
-                                    </a>   
-                                </div>
-                                <div class="small-container-body">
-                                    <div class="small-container-image">
-                                        <img src="<?php echo $template_url;?>/images/map-green3.jpg" alt="Change the world through games" />
-                                    </div>                  
-                                </div> 
-                            </div>
-                            <div class="small-container">
-                                <div class="small-container-title">
-                                    <a href="<?php echo $site_url; ?>/articles/html5-games.html">
-                                        <span>Browser Games</span>
-                                    </a>   
-                                </div>
-                                <div class="small-container-body">
-                                    <div class="small-container-image">
-                                        <img src="<?php echo $template_url;?>/images/html5-logo.jpg" alt="Games could change the world" />
-                                    </div>                  
-                                </div> 
-                            </div>
-                            <div class="small-container">
-                                <div class="small-container-title">
-                                    <a href="<?php echo $site_url; ?>/articles/skyrim-better-than-life.html">
-                                        <span>Skyrim Review</span>
-                                    </a> 
-                                </div>
-                                <div class="small-container-body">
-                                    <div class="small-container-image">
-                                        <img src="<?php echo $template_url;?>/images/skyrim-tavern.png" alt="Skyrim Tavern" />
-                                    </div>                  
-                                </div>
-                            </div>
+                            </div> <?php 
+                        } ?>
                         </div>                              
                     </div> <?php 
 }
@@ -78,7 +49,7 @@ if ( (!is_home()) && (!is_single()) ) {
 		while ( have_posts() ) {
 			the_post();
 			default_loop_title();
-			get_post_image($post);
+			get_index_post_image($post);
 		} 
 	}
 }
@@ -96,10 +67,13 @@ function default_single() {
     if ( have_posts() ) {
 	    global $post; 
 	    the_post();
+	    get_single_post_image($post); ?>
+			        <div class="page-container-text"> <?php
         if (!is_page()) {
 	        default_single_title();
         }
-        the_content();
+        the_content(); ?>
+			        </div> <?php
     }
 }
 
@@ -117,21 +91,28 @@ function default_loop_title() {
 
 function default_single_title() {
 	/**
-	 * Print title of post to product pages
+	 * Print title of post
 	 */
     global $post;
-	$title = esc_attr(get_the_title($post->ID));
+	$title = esc_attr(get_the_title($post->ID)); ?>
 	
-	?><h1><?php echo $title; ?></h1><?php 
+	<h1><?php echo $title; ?></h1> <?php 
 }
 
-function get_post_image($post) {
+function get_index_post_image($post) {
     global $post;
     if ( has_post_thumbnail() ) {
-        $link = get_permalink($post->ID);
-		?><a href="<?php echo $link; ?>"><?php
-		the_post_thumbnail('jb_custom');
-		?></a><?php
+        $link = get_permalink($post->ID); ?>
+        <a href="<?php echo $link; ?>">
+        <?php the_post_thumbnail('jb_custom'); ?>
+		</a> <?php
     }
+}
+
+function get_single_post_image($post) { 
+    global $post; ?>
+		            <div class="page-container-image">
+	                    <?php the_post_thumbnail(); ?>
+	                </div> <?php
 }
 ?>
