@@ -21,7 +21,7 @@
         <!-- Load style sheets, webfonts and media queries  -->
         <link rel="stylesheet" href="<?php echo $template_url;?>/template/css/normalize.css">
         <link rel="stylesheet" href="<?php echo $template_url;?>/template/css/main.css">
-        <link rel="stylesheet" href="<?php echo $template_url;?>/template/css/fontfaces.css">
+        <link rel="stylesheet" href="<?php echo $template_url;?>/template/css/webfonts.css">
         
         <script src="<?php echo $template_url;?>/template/js/vendor/modernizr-2.6.2.min.js"></script>
     </head>

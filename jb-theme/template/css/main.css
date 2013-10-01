@@ -173,7 +173,7 @@ h5 {
 /** Add hover effect and active effect to aid in user navigation and feedback  **/
 
 a:hover, .nav a:hover, .continue-reading a, .header-nav-bar #active a,
-.page-container-feed-text h1 a:hover {
+.page-container-feed-text h1 a:hover, #logo a:hover {
     color: #F5AA53;	
 }
 
@@ -219,7 +219,7 @@ header {
     border-left-style: none;
 }
 
-#logo {
+#logo a {
     font-family: PressStart2PRegular;
     line-height: 3em;
     margin-left: 1em;
@@ -230,9 +230,6 @@ header {
     color: #E3F0F5;
 }
 
-#logo a {
-	color: #E3F0F5;
-}
 /** Horizontal nav bar in header **/
 
 .header-nav-bar {
