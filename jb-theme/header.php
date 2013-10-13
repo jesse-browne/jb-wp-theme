@@ -24,7 +24,7 @@
         <link rel="stylesheet" href="<?php echo $template_url;?>/template/css/main.css">
         <link rel="stylesheet" href="<?php echo $template_url;?>/template/css/webfonts.css">
         
-        <script src="<?php echo $template_url;?>/template/js/vendor/modernizr-2.6.2.min.js"></script>
+        <script src="<?php echo $template_url;?>/template/js/vendor/modernizr-2.6.2.min.js" async></script>
     </head>
     <body>
         <!--[if lt IE 7]>
