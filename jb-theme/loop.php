@@ -74,7 +74,7 @@ function default_single() {
         }
         the_content(); 
         if (!is_page()) {
-	        get_comments();
+	        get_my_comments();
         }        
         ?>
 			        </div> <?php
@@ -120,7 +120,7 @@ function get_single_post_image($post) {
 	                </div> <?php
 }
 
-function get_comments() { 
+function get_my_comments() { 
 	/**
 	 * Render Livefyre comments
 	 */
