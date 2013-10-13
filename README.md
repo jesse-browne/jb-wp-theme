@@ -1,4 +1,4 @@
 jb-wp-theme
 ===========
 
-A theme for a build of my personal site in wordpress.
+A wordpress theme for a build of my personal site.

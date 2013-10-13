@@ -72,12 +72,16 @@ function default_single() {
         if (!is_page()) {
 	        default_single_title();
         }
-        the_content(); ?>
+        the_content(); 
+        if (!is_page()) {
+	        get_comments();
+        }        
+        ?>
 			        </div> <?php
     }
 }
 
-/* Get titles and images */
+/* Get titles, images and comments */
 function default_loop_title() {
 	/**
 	 * Print title of post to product index page
@@ -114,5 +118,36 @@ function get_single_post_image($post) {
 		            <div class="page-container-image">
 	                    <?php the_post_thumbnail(); ?>
 	                </div> <?php
+}
+
+function get_comments() { 
+	/**
+	 * Render Livefyre comments
+	 */
+	
+	$category = ( !is_home() ) ? get_product_category() : '';
+	
+	if ( ($category == 'Projects') || ($category == 'Articles') ) { ?>
+		<!-- START: Livefyre Embed -->
+		<div id="livefyre-comments"></div>
+		<script type="text/javascript" src="http://zor.livefyre.com/wjs/v3.0/javascripts/livefyre.js"></script>
+		<script type="text/javascript">
+		(function () {
+		    var articleId = fyre.conv.load.makeArticleId(null);
+		    fyre.conv.load({}, [{
+		        el: 'livefyre-comments',
+		        network: "livefyre.com",
+		        siteId: "345600",
+		        articleId: articleId,
+		        signed: false,
+		        collectionMeta: {
+		            articleId: articleId,
+		            url: fyre.conv.load.makeCollectionUrl(),
+		        }
+		    }], function() {});
+		}());
+		</script>
+		<!-- END: Livefyre Embed --> <?php 
+	}
 }
 ?>
