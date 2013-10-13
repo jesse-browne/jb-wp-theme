@@ -18,6 +18,7 @@
         <title><?php echo $title; ?></title>
         
         <!-- Place favicon.ico and apple-touch-icon.png here -->
+        <link rel="shortcut icon" href="<?php echo $template_url;?>/template/jb-icon.ico" />
         
         <!-- Load style sheets, webfonts and media queries  -->
         <link rel="stylesheet" href="<?php echo $template_url;?>/template/css/normalize.css">
