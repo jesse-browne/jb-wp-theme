@@ -8,7 +8,7 @@ if (is_home()) {
     $args = array('posts_per_page' => 4);
     $posts = get_posts($args); ?>
     	            <!-- Main Heading -->
-                    <h1>Projects, browser games and thoughts</h1>
+                    <h1>Web apps, browser games and thoughts</h1>
                     <!-- Tag Line -->
                     <h5>By Jesse Browne, web application developer</h5>
                     <!-- Container with description and most recent activity -->
